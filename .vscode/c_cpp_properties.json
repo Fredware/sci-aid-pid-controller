@@ -1,0 +1,80 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/include",
+                "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/src",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/include",
+                "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/.pio/build/disco_f072rb/zephyr/include/generated",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/soc/arm/st_stm32/stm32f0",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/drivers",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/soc/arm/st_stm32/common",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/soc",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include/Legacy",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/common_ll/include",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/include",
+                    "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/src",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/include",
+                    "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/.pio/build/disco_f072rb/zephyr/include/generated",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/soc/arm/st_stm32/stm32f0",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/drivers",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/soc/arm/st_stm32/common",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/soc",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include/Legacy",
+                    "C:/Users/fredi/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/common_ll/include",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60111",
+                "STM32F072xB",
+                "BUILD_VERSION=zephyr-v20701",
+                "HSE_VALUE=8000000",
+                "KERNEL",
+                "STM32F072xB",
+                "USE_FULL_LL_DRIVER",
+                "USE_HAL_DRIVER",
+                "_FORTIFY_SOURCE=2",
+                "__PROGRAM_START",
+                "__ZEPHYR__=1",
+                ""
+            ],
+            "cStandard": "c99",
+            "forcedInclude": [
+                "C:/Users/fredi/Box/NeuroRoboticsLab/JAGLAB/Projects/SCI-AID/code/pid-controller/.pio/build/disco_f072rb/zephyr/include/generated/autoconf.h",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/include/toolchain/zephyr_stdint.h",
+                ""
+            ],
+            "compilerPath": "C:/Users/fredi/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mcpu=cortex-m0",
+                "-mthumb",
+                "-mabi=aapcs",
+                "-mfp16-format=ieee",
+                "-isystem",
+                "C:/Users/fredi/.platformio/packages/framework-zephyr/lib/libc/minimal/include",
+                "-isystem",
+                "c:/users/fredi/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include",
+                "-isystem",
+                "c:/users/fredi/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include-fixed",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
