@@ -22,7 +22,62 @@ K_THREAD_STACK_DEFINE(coop_stack, STACK_SIZE);
 int counter;
 bool led_is_on;
 
+/*************PID CODE************/
+/************PID STRUCT********/
+typedef struct {
+    float kp;
+    float ki;
+    float kd;
+
+    float tau;
+
+    float max_lim_out;
+    float min_lim_out;
+
+    float sample_period;
+
+    float integral_term;
+    float error_prev;
+    float differential_term;
+    float meas_prev;
+
+    float out;
+} Controller;
+
+void controller_initialize(Controller *pid){
+    pid->integral_term = 0.0f;
+    pid->error_prev = 0.0f;
+    pid->differential_term = 0.0f;
+    pid->meas_prev = 0.0f;
+    pid->out = 0.0f;
+}
+
+float controller_update(Controller *pid, float setpoint, float meas_val){
+float error_val = setpoint - meas_val;
+/*Proportional*/
+float proportional_term = pid->kp*error_val;
+/*Integral*/
+pid->integral_term = 0.5f *pid->ki * pid->sample_period * (error_val + pid->error_prev) + pid->integral_term;
+/*Derivative*/
+pid->differential_term = -(2.0f*pid->kd * (meas_val - pid->meas_prev) 
+                            + (2.0f * pid->tau - pid->sample_period) * pid->differential_term )
+                        / (2.0f * pid->tau + pid->sample_period);
+/*TODO: Integrator Antiwindup*/
+/*Output*/
+pid->out = proportional_term + pid->integral_term + pid->differential_term;
+/*Clamp Output*/
+if (pid->out > pid->max_lim_out){pid->out = pid->max_lim_out;}
+else if (pid->out < pid->min_lim_out){pid->out = pid->min_lim_out;}
+/*Store current vals as prev vals*/
+pid->error_prev = error_val;
+pid->meas_prev = meas_val;
+
+return pid->out;
+}
+/*********************/
+
 void thread_entry_func(void){
+
    const struct device *dev;
    dev = device_get_binding(LED1);
    bool led_is_on = true;
