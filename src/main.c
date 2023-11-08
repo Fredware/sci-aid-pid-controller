@@ -16,8 +16,8 @@
 #define FLAGS1 DT_GPIO_FLAGS(LED1_NODE, gpios)
 
 #define STACK_SIZE 2000
-struct k_thread coop_thread;
-K_THREAD_STACK_DEFINE(coop_stack, STACK_SIZE);
+struct k_thread pid_thread;
+K_THREAD_STACK_DEFINE(pid_stack, STACK_SIZE);
 
 int counter;
 bool led_is_on;
@@ -77,7 +77,6 @@ return pid->out;
 /*********************/
 
 void thread_entry_func(void){
-
    const struct device *dev;
    dev = device_get_binding(LED1);
    bool led_is_on = true;
@@ -105,8 +104,8 @@ void main(void)
     
     k_thread_create
     (
-        &coop_thread,
-        coop_stack,
+        &pid_thread,
+        pid_stack,
         STACK_SIZE,
         (k_thread_entry_t) thread_entry_func,
         NULL,
